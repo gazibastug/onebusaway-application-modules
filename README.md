@@ -11,3 +11,7 @@
   2.1 version updated 2.2
   
   Maven error fixed
+  
+  Spring roles fixed.
+  
+  Eclipse version upgraded.
