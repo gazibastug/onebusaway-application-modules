@@ -9,3 +9,5 @@
   Updated Maven POMS.
 
   2.1 version updated 2.2
+  
+  Maven error fixed
