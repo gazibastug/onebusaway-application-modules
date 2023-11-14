@@ -7,3 +7,5 @@
   Updated xml schema format. Fiexd xml errors.
 
   Updated Maven POMS.
+
+  2.1 version updated 2.2
