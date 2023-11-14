@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+    Copyright (C) 2011 Brian Ferris <bdferris@onebusaway.org>
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<!--
+
+    Configuration file for UrlRewriteFilter
+    http://tuckey.org/urlrewrite/
+
+-->
+<urlrewrite use-query-string="true" use-context="true">
+
+    <!-- here we removed legacy v2 support -->
+
+
+    <!-- make sure type param is present and infer from URL -->
+    <!-- this changed slightly in now that .json and .xml are support by the action -->
+    <rule>
+        <condition type="parameter" name="type">null</condition>
+        <from>^([^;]*)/siri/([^.]*)\.(json|xml)(.*)$</from>
+        <to type="redirect" last="true">$1/siri/$2.$3$4&amp;type=$3</to>
+    </rule>
+
+    <rule>
+        <condition type="parameter" name="type">json</condition>
+        <from>^([^;]*)/siri/(vehicle-monitoring)[?](.*)$</from>
+        <to type="redirect" last="true">$1/siri/$2.json?$3</to>
+    </rule>
+
+    <rule>
+        <condition type="parameter" name="type">xml</condition>
+        <from>^([^;]*)/siri/(vehicle-monitoring)[?](.*)$</from>
+        <to type="redirect" last="true">$1/siri/$2.xml?$3</to>
+    </rule>
+
+    <rule>
+        <condition type="parameter" name="type">json</condition>
+        <from>^([^;]*)/siri/(stop-monitoring)[?](.*)$</from>
+        <to type="redirect" last="true">$1/siri/$2.json?$3</to>
+    </rule>
+
+    <rule>
+        <condition type="parameter" name="type">xml</condition>
+        <from>^([^;]*)/siri/(stop-monitoring)[?](.*)$</from>
+        <to type="redirect" last="true">$1/siri/$2.xml?$3</to>
+    </rule>
+
+</urlrewrite>
