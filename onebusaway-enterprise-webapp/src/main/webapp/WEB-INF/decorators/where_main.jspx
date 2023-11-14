@@ -150,7 +150,7 @@
 
 			<div id="bottombar">
 				<div class="bottombox" id="google_translate_element_bottom">
-					<span>Google Translate</span>
+					<span>Google Ceviri</span>
 					<s:set var="link" value="getText('main.agency.link')" />
 					<s:url var="url" value="/css/img/google_logo.png">
 						<s:param name="v">

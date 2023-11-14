@@ -26,7 +26,7 @@
 <div id="container">
 <div class="panel">
 
-<h3 class="warning">Bad.</h3>
+<h3 class="warning">Uyari.</h3>
 
 <p><s:property value="fieldErrors" /></p>
 

@@ -148,21 +148,21 @@
 	       <form action="search.action">
 	         <input type="text" name="q" value="" aria-label="Enter search: "/>
 	         <input type="submit" value="Find" class="submit"/>
-	         <p id="tip">Enter a bus stop code, route, or street address.</p>
+	         <p id="tip">OTOBUS KODU, ROTA VEYA ADRES GIRINIZ</p>
 	       </form>
 	       
 	       <div id="matches">
-	       	 <h2>Results:</h2>
+	       	 <h2>SONUCLAR:</h2>
 	       	 <ul><!-- //prevent jspx minimization --></ul>
 		   </div>
 		   
 		   <div id="filtered-matches">
-		   	<h2>Other routes here:</h2>
+		   	<h2>DIGER ROTALAR:</h2>
 		   	<ul><!-- //prevent jspx minimization --></ul>
 		   </div>
 	
 	       <div id="suggestions">
-	       	 <h2>Did You Mean?</h2>
+	       	 <h2>BUNUMU DEMEK ISTEDINIZ?</h2>
 	       	 <ul></ul>
 		   </div>
 		            
@@ -170,7 +170,7 @@
 	
 		   <div id="loading">
 			   	<div class="loading">
-			   		<span>Loading...</span>
+			   		<span>Yukleniyor...</span>
 		   		</div>
 		   </div>
 	
@@ -241,9 +241,9 @@
 	   			<li id="wizard-col1">
 	   				<a data-placement="right" class="wizard_panel" rel="popover">
 	    				<div id="inner-col1">
-	    					<h2>New to <s:property value="getText('main.application.name')" />?</h2>
-	    					<p>Click here for instructions:</p>
-	    					<p>Just a few easy steps!</p>
+	    					<h2>Yeni <s:property value="getText('main.application.name')" />?</h2>
+	    					<p>Talimatlar icin buraya tiklayin:</p>
+	    					<p>Kolay birkac adim kaldi!</p>
 	    				</div>
 	   				</a>
 			    </li>
@@ -267,16 +267,16 @@
 			    	</a>
 			    </li>
 			</ul>
-			<a class="close"><span class="close_txt">Close</span> ×</a>
+			<a class="close"><span class="close_txt">Kapat</span> ×</a>
 		</div>
 		<div id="wizard_didyoumean">
 			<a data-placement="right" class="wizard_panel" rel="popover">&amp;nbsp;</a>
-			<a class="close"><span class="close_txt">Close</span> ×</a>
+			<a class="close"><span class="close_txt">Kapat</span> ×</a>
 		</div>
 		<div id="wizard_inuse">
 			<a data-placement="right" class="wizard_panel" rel="popover">&amp;nbsp;</a>
-			<span class="text_span">Follow the instructions above . . .</span>
-			<a class="close"><span class="close_txt">Close</span> ×</a>
+			<span class="text_span">Yukaridaki Talimatlari Izleyiniz . . .</span>
+			<a class="close"><span class="close_txt">Kapat</span> ×</a>
 		</div>
 		<div id="wizard_finaltip">
 			<div>

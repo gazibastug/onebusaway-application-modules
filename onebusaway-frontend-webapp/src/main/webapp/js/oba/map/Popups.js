@@ -118,7 +118,7 @@ OBA.Popups = (function() {
 			var age = parseInt(timestampContainer.attr("age"), 10);
 			var referenceEpoch = parseInt(timestampContainer.attr("referenceEpoch"), 10);
 			var newAge = age + ((new Date().getTime() - referenceEpoch) / 1000);
-			timestampContainer.text("Data updated " + OBA.Util.displayTime(newAge));
+			timestampContainer.text("Veri Guncellendi " + OBA.Util.displayTime(newAge));
 		};
 		updateTimestamp();		
 		infoWindow.updateTimestamp = updateTimestamp;
@@ -150,7 +150,7 @@ OBA.Popups = (function() {
         }
         
         if (html !== '') {
-            html = '<div class="serviceAlertContainer"><p class="title">Service Change:</p><ul class="alerts">' + html + '</ul></div>';
+            html = '<div class="serviceAlertContainer"><p class="title">Servis Degisikligi:</p><ul class="alerts">' + html + '</ul></div>';
         }
         
         return html;
@@ -261,10 +261,10 @@ OBA.Popups = (function() {
 
         //don't show block id if there is none or if config says no
         if (OBA.Config.showBlockIdInVehiclePopup == 'false' || typeof blockIdWithoutAgency === 'undefined' || blockIdWithoutAgency === null) {
-            html += '<span class="type">Vehicle #' + vehicleIdWithoutAgency + '</span>';
+            html += '<span class="type">Otobus #' + vehicleIdWithoutAgency + '</span>';
 		}
 		else {
-            html += '<span class="type">Vehicle #' + vehicleIdWithoutAgency + ' - ' + blockIdWithoutAgency + '</span>';
+            html += '<span class="type">Otobus #' + vehicleIdWithoutAgency + ' - ' + blockIdWithoutAgency + '</span>';
 		}
 
 		var updateTimestamp = OBA.Util.ISO8601StringToDate(activity.RecordedAtTime).getTime();
@@ -276,7 +276,7 @@ OBA.Popups = (function() {
 		html += '<span class="updated' + staleClass + '"' + 
 				' age="' + age + '"' + 
 				' referenceEpoch="' + new Date().getTime() + '"' + 
-				'>Data updated ' 
+				'>Veri Guncellendi ' 
 				+ OBA.Util.displayTime(age) 
 				+ '</span>'; 
 		
@@ -314,11 +314,11 @@ OBA.Popups = (function() {
 					//console.log("no valid arrivals for " + vehicleId);
 				} else {
 
-					html += '<p class="service">Next stops:</p>';
+					html += '<p class="service">Sonraki Durak:</p>';
 
 					// Alert if Realtime Data is unavailable
 					if(!hasRealtime){
-						html += '<div class="scheduleAlert"><p>Realtime data currently unavailable for this vehicle</p></div>';
+						html += '<div class="scheduleAlert"><p>Bu arac icin su anda gerçek zamanli veri mevcut degil</p></div>';
 					}
 
 					html += '<ul>';
@@ -364,7 +364,7 @@ OBA.Popups = (function() {
 			html += OBA.Config.infoBubbleFooterFunction('route', activity.MonitoredVehicleJourney.PublishedLineName);
 		
 		html += "<ul class='links'>";
-		html += "<a href='#' id='zoomHere'>Center & Zoom Here</a>";
+		html += "<a href='#' id='zoomHere'>Ortala & Yakinlastir</a>";
 		html += "</ul>";
 
 		// (end popup)
@@ -498,7 +498,7 @@ OBA.Popups = (function() {
 			html += '<span class="updated' + staleClass + '"' + 
 					' age="' + age + '"' + 
 					' referenceEpoch="' + new Date().getTime() + '"' + 
-					'>Data updated ' 
+					'>Veri Guncellendi ' 
 					+ OBA.Util.displayTime(age) 
 					+ '</span>'; 
 		}
@@ -510,7 +510,7 @@ OBA.Popups = (function() {
         //check for stop level alerts
          if (stopId in alertData) {
 
-             var serviceAlertHeader = jQuery("<p class='popupServiceAlert'>" + OBA.Config.serviceAlertText + " for " + stopCode + ". Click for info</p>");
+             var serviceAlertHeader = jQuery("<p class='popupServiceAlert'>" + OBA.Config.serviceAlertText + " for " + stopCode + ". Bilgileri Gormek Icin</p>");
 
              var serviceAlertList = jQuery("" +
                  "<ul></ul>")
@@ -572,7 +572,7 @@ OBA.Popups = (function() {
          var filteredMatches = jQuery("<div></div>");
          var filteredMatchesData = jQuery('<div></div>').addClass("popup-filtered-matches");
          filteredMatches.append(filteredMatchesData);
-         filteredMatchesData.append(jQuery("<h2></h2>").text("Other Routes Here:").addClass("service"));
+         filteredMatchesData.append(jQuery("<h2></h2>").text("Diger Rotalar Burada:").addClass("service"));
          filteredMatchesData.append("<ul></ul>");
 
          jQuery.each(stopResult.routesAvailable, function(_, route) {
@@ -633,7 +633,7 @@ OBA.Popups = (function() {
 
              // service available
              if(routeAndDirectionWithArrivalsCount > 0) {
-                 html += '<p class="service">Buses en-route:</p>';
+                 html += '<p class="service">Otobusler Yolda:</p>';
 
                  jQuery.each(routeAndDirectionWithArrivals, function(_, mvjs) {
                      var mvj = mvjs[0];
@@ -644,7 +644,7 @@ OBA.Popups = (function() {
                      html += '<a href="' + OBA.Config.searchParamsPrefix + uniqueStopId + '%20' + mvj.PublishedLineName + '"><span class="route-name">' + mvj.PublishedLineName + "</span>&nbsp;&nbsp; " + mvj.DestinationName + '</a>';
                      if(mvj.Monitored)
                      if (mvj.LineRef in alertData) {
-                         html += ' <a id="alert-link|' + uniqueStopId + '|' + mvj.LineRef + '|' + mvj.PublishedLineName + '" class="alert-link" href="#">Alert</a>';
+                         html += ' <a id="alert-link|' + uniqueStopId + '|' + mvj.LineRef + '|' + mvj.PublishedLineName + '" class="alert-link" href="#">Uyarilar</a>';
                      }
                      html += '</li>';
 
@@ -695,7 +695,7 @@ OBA.Popups = (function() {
 						
 						// Alert if Realtime data is unavailable
 						if(typeof hasRealtime === 'undefined' || hasRealtime === null || hasRealtime == false){
-							distance += '<span class="scheduleAlert"><span class="not_bold"> (using schedule time)</span></span>';
+							distance += '<span class="scheduleAlert"><span class="not_bold"> (hareket zamani kullanma)</span></span>';
 							arrival = 'arrival_schedule arrival_schedule_' + vehicleType;
 						}
 						// If realtime data is available and config is set, add vehicleID
@@ -731,13 +731,13 @@ OBA.Popups = (function() {
 									// here we want to use the time prediction if we have it (counter to what the MTA does)
 									// we also ignore stalled as the time prediction will account for that
 									if (timePrediction != null) {
-										distance = timePrediction + ", " + distance + " <span class='not_bold'>(at terminal)</span>";	
+										distance = timePrediction + ", " + distance + " <span class='not_bold'>(istasyonda)</span>";	
 									} else {
-										distance += " <span class='not_bold'>(at terminal)</span>";
+										distance += " <span class='not_bold'>(istasyonda)</span>";
 									}
 								}
 							} else if(wrapped === true) {
-								distance += " <span class='not_bold'>(+ scheduled layover at terminal)</span>";
+								distance += " <span class='not_bold'>(+ istasyonda planlı bekleme)</span>";
 							}
 								
 							var lastClass = ((_ === maxObservationsToShow - 1 || _ === mvjs.length - 1) ? " last" : "");
@@ -749,7 +749,7 @@ OBA.Popups = (function() {
 		}
 		
 		if(routeAndDirectionWithoutArrivalsCount > 0) {
-		    html += '<p class="service muted">No buses en-route to this stop for:</p>';
+		    html += '<p class="service muted">Bu duraga otobus seferi bulunmamaktadir:</p>';
 
 			html += '<ul>';
 			var i = 0;
@@ -757,18 +757,18 @@ OBA.Popups = (function() {
 				html += '<li class="route">';
 				html += '<a class="muted" href="' + OBA.Config.searchParamsPrefix + uniqueStopId + "%20" + d.shortName + '"><span class="route-name">' + d.shortName + "</span>&nbsp;&nbsp; " + d.destination + '</a>';
                 if (d.id in alertData) {
-					html += ' <a id="alert-link|' + uniqueStopId + '|' + d.id + '|' + d.shortName + '" class="alert-link" href="#">Alert</a>';
+					html += ' <a id="alert-link|' + uniqueStopId + '|' + d.id + '|' + d.shortName + '" class="alert-link" href="#">Uyarilar</a>';
 				}
 				html += '</li>';
 				
 				i++;
 			});
-			html += "<li><a href=\'" + OBA.Config.urlPrefix + "where/schedule?id=" + stopResult.id +"\'>(click here for schedule)</a></li>";
+			html += "<li><a href=\'" + OBA.Config.urlPrefix + "where/schedule?id=" + stopResult.id +"\'>(hareket zamani icin buraya tiklayiniz)</a></li>";
 			html += '</ul>';
 		}
 
 		if(routeAndDirectionWithoutSerivceCount > 0) {
-			html += '<p class="service muted">No scheduled service at this time for:</p>';
+			html += '<p class="service muted">Su anda planlanmis bir hizmet bulunmamaktadir:</p>';
 
 			html += '<ul class="no-service-routes">';
 			var i = 0;
@@ -784,7 +784,7 @@ OBA.Popups = (function() {
 		
 		// filtered out roues
 		if (filteredMatches.find("li").length > 0) {
-			var showAll = jQuery("<li></li>").addClass("filtered-match").html('<a href="' + OBA.Config.searchParamsPrefix + OBA.Util.displayStopId(stopResult.id) + '"><span class="route-name">See&nbsp;All</span></a>');
+			var showAll = jQuery("<li></li>").addClass("filtered-match").html('<a href="' + OBA.Config.searchParamsPrefix + OBA.Util.displayStopId(stopResult.id) + '"><span class="route-name">Tumunu&nbsp;Goster</span></a>');
             filteredMatches.find("ul").append(showAll);
 			html += filteredMatches.html();
 		}
@@ -797,7 +797,7 @@ OBA.Popups = (function() {
 			html += "<a target='_blank' href='" + OBA.Config.feedbackFormURL +"'>"
 			html += OBA.Config.feedbackFormText + "</a>&nbsp;&nbsp;&nbsp;";
 		}
-		html += "<a href='#' id='zoomHere'>Center & Zoom Here</a>&nbsp;&nbsp;&nbsp;<a href='" + OBA.Config.urlPrefix + "where/schedule?id=" + stopResult.id +"' id='schedule'>View Schedule</a>";
+		html += "<a href='#' id='zoomHere'>Ortala & Yakinlastir</a>&nbsp;&nbsp;&nbsp;<a href='" + OBA.Config.urlPrefix + "where/schedule?id=" + stopResult.id +"' id='schedule'>Hareket Zamani Goster</a>";
 		html += "</ul>";
 		
 		// (end popup)

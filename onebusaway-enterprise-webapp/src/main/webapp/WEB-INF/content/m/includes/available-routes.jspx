@@ -26,14 +26,14 @@
     <c:choose>
         <c:when test="${!queryIsEmpty}">
             <div id="cant-find">
-                <h2>Can't find your bus route?</h2>
+                <h2>UZGUNUM OTOBUS BULUNAMADI?</h2>
                 <s:url var="url" namespace="/m/routes" action="index" />
-                <p><s:property value="getText('main.cantfindroute.text')" /> <a href="${url}">Click here</a> to see which routes are currently available.</p>
+                <p><s:property value="getText('main.cantfindroute.text')" /> <a href="${url}">TIKLAYINIZ</a> KULLANILAN ROTALARI GOREBILMEK ICIN</p>
             </div>
         </c:when>
         <c:otherwise>
             <s:url var="url" namespace="/m/routes" action="index" />
-            <div id="available-routes"><a href="${url}">Click here</a> for a list of available routes.</div>
+            <div id="available-routes"><a href="${url}">TIKLAYINIZ</a> ROTALARI LISTELEMEK ICIN</div>
         </c:otherwise>
     </c:choose>
 </div>

@@ -22,11 +22,11 @@
      xmlns:wiki="/oba-wiki-tags"
      id="content-non-map">
     <s:url var="url" namespace="/routes" action="index"/>
-    <div id="available-routes"><a href="${url}">Click here</a> for a list of available routes.</div>
+    <div id="available-routes"><a href="${url}">TIKLAYINIZ</a> KULLANILAN ROTALAR.</div>
 
     <div id="cant-find">
     <h2>Can't find your bus route?</h2>
     <s:url var="url" namespace="/routes" action="index" />
-    <p><s:property value="getText('main.cantfindroute.text')" /> <a href="${url}">Click here</a> to see which routes are currently available.</p>
+    <p><s:property value="getText('main.cantfindroute.text')" /> <a href="${url}">TIKLAYINIZ</a> MEVCUT ROTALARI GORMEK ICIN.</p>
     </div>
 </div>
