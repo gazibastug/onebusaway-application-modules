@@ -50,7 +50,7 @@
         <td>
 
         <div class="stopScheduleCalendars">
-        <div class="stopScheduleCalendarsHeader"><oba:message key="Calendar"/></div>
+        <div class="stopScheduleCalendarsHeader">HAREKET TAKVIMI</div>
 
         <oba:group value="result.calendarDays.days" var="months">
           <oba:date format="MMMMM yyyy" value="date"/>
@@ -135,7 +135,7 @@
           </span><jsp:text>. </jsp:text>
           <oba:message key="schedule.forRealTimeInfo"/>,
           <s:a href="%{realtimeUrl}%{result.stop.id}">
-            <oba:message key="click_here"/>
+            Tiklayiniz
           </s:a>.
         </div>
 
@@ -220,8 +220,8 @@
                   <s:if test="#AmPm">
                     <td class="am_pm_header"></td>
                   </s:if>
-                  <td class="hour_header"><oba:message key="Hour"/>:</td>
-                  <td class="minute_header"><oba:message key="Minute"/></td>
+                  <td class="hour_header">Saat:</td>
+                  <td class="minute_header">Dakika</td>
                 </tr>
               </thead>
               <tbody>

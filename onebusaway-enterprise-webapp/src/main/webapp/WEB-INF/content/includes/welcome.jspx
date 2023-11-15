@@ -16,5 +16,15 @@
 
 -->
 <div id="welcome">
-	<!-- Prevent jspx minimization -->
+<h2>ASAGIDA ORNEKLER SUNULMUSTUR</h2>
+	<ul>
+<li>ROTA NO:  <a href="#372">372</a>  <a href="#550">550</a></li>
+<li>ROTA KELIME:  <a href="#N20Line">N Line</a>  <a href="#S20Line">S Line</a></li>
+<li>ROTA ADI:  <a href="#1-Line">1-Line</a>  <a href="#First">First Hill Streetcar</a></li>
+<li>DURAK NO:  <a href="#1_431">1_431</a></li>
+<li>DURAK ADI:  <a href="#1_21141">Olson-Myers</a></li>
+</ul>
+
+
+
 </div>
