@@ -27,4 +27,6 @@
  Tomcat webapp folder copy
  onebusaway-admin-webapp.war
  onebusaway-api-webapp.war
- run tomcat then extract war file to tomcat folder 
+
+export CATALINA_OPTS="-Djava.awt.headless=true -Xss4m -Xmx2g -XX:+UseConcMarkSweepGC" 
+run tomcat then extract war file to tomcat folder 
