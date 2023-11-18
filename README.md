@@ -17,3 +17,14 @@
   Eclipse version upgraded.
   
  You can add mobile coordinate info for android and ios mobile and  You can find coordinate info {yoururl}\onebusaway-api-webapp/api//where/agencies-with-coverage.json?key=OBA
+
+ First Steps
+
+ Install ubuntu.
+ You can create /var/lib/oba folder  
+ Copy config.json in /var/lib/oba folder
+ Install Tomcat 8.5
+ Tomcat webapp folder copy
+ onebusaway-admin-webapp.war
+ onebusaway-api-webapp.war
+ run tomcat then extract war file to tomcat folder 
