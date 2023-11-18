@@ -15,3 +15,5 @@
   Spring roles fixed.
   
   Eclipse version upgraded.
+  
+ You can add mobile coordinate info for android and ios mobile and  You can find coordinate info {yoururl}\onebusaway-api-webapp/api//where/agencies-with-coverage.json?key=OBA
